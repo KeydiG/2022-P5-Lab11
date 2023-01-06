@@ -19,18 +19,39 @@ public class Lab11avst
         displayPrimes(primes);
     }
 
-    public static void computePrimes(boolean primes[])
-    {
+    public static void computePrimes(boolean primes[]) {
         System.out.println("\nCOMPUTING PRIME NUMBERS");
+        // Step 1: Treat all numbers as prime
+        // Write a loop that changes ALL numbers to prime (true) in the array.
 
+        for (int k = 2; k < primes.length; k++) {
+            primes[k] = true;
+
+        }
+
+        for(int k = 2; k < primes.length; k++) {
+            for (int k = 2 * 2; k < primes.length; k += 2) {
+                primes[k] = false;
+
+            }
+            //Step 2: This is where you remove the primes
+            //To start, JUST remove the multiples of 2
+
+        }
     }
-
     public static void displayPrimes(boolean primes[])
     {
         System.out.println("\n\nPRIMES BETWEEN 1 AND "+ primes.length);
         System.out.println();
 
+        for(int k = 2; k < primes.length; k++){
+            if(primes[k] == true) {
+                System.out.println(k + " ");
+            }
+        }
     }
+
+
 
 }
 
